@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class RequestsAggregator implements Aggregator {
+public class RequestsAggregator implements ProjectsAggregator {
 
     private int perPage;
     private int remainder;

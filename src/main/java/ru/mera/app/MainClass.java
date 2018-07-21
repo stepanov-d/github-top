@@ -13,7 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.mera.domain.WeightIdentifier;
 import ru.mera.entity.Project;
-import ru.mera.service.aggregator.Aggregator;
+import ru.mera.service.aggregator.ProjectsAggregator;
 import ru.mera.service.exception.ServiceNotAvailableException;
 
 import java.util.List;
@@ -22,14 +22,14 @@ import static ru.mera.util.LoggingUtil.getCurrentClassName;
 
 public class MainClass {
 
-    private static Aggregator aggregator;
+    private static ProjectsAggregator aggregator;
 
     private static final Logger logger = Logger.getLogger(getCurrentClassName());
 
     public static void main(String[] args) {
         try {
             ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-            aggregator = context.getBean(Aggregator.class);
+            aggregator = context.getBean(ProjectsAggregator.class);
             logger.info("Getting response from GitHub REST web service...");
             long from = System.currentTimeMillis();
 

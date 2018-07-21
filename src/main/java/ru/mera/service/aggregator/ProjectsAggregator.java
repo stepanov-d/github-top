@@ -13,7 +13,7 @@ import ru.mera.service.exception.ServiceNotAvailableException;
 
 import java.util.List;
 
-public interface Aggregator {
+public interface ProjectsAggregator {
 
     List<Project> requestProjects() throws ServiceNotAvailableException;
 
